@@ -1,0 +1,2 @@
+# syokuma
+SYOKUMA Project(α)
