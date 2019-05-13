@@ -23,9 +23,16 @@ class Shop(models.Model):
     shop_url = models.URLField('店舗URL', max_length=1000)
     shop_tel = models.DecimalField('店電話番号', max_length=12)
     shop_imageurl = models.CharField('店舗画像URL', max_length=1000)
+    shop_businesshour = models.DateTimeField('店舗営業時間', max_length=30)
 
 
 class Review(models.Model):
-    F_Judge = models.DecimalField('判断', max_length=20)
+    shop_id = models.ForeignKey('店id', max_length=255)
+    F_Judge = models.DecimalField('判断', max_length=20, primary_key=True)
     review_Scorenum = models.FloatField('店舗スコア', max_length=10)
-    review_Commentbody = models.CharField('コメエント', max_length=255)
+    review_Commentbody = models.CharField('コメント', max_length=255)
+
+
+class F_judge(models.Model):
+    F_judge = models.ForeignKey()
+    APPName = models.CharField('',)
