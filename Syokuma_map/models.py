@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 
 
 class Customer(models.Model):
@@ -14,7 +15,8 @@ class Customer(models.Model):
 
 
 class Shop(models.Model):
-    shop_id = models.CharField('店id', max_length=255, primary_key=True)
+    shop_id = models.UUIDField('店id', max_length=255, primary_key=True)
+    shop_Appid = models.CharField('API店id', max_length=250)
     shop_name = models.CharField('店舗名', max_length=255)
     shop_ruby = models.CharField('店舗名かな', max_length=255)
     shop_address = models.CharField('店舗住所', max_length=255)
