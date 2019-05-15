@@ -35,4 +35,4 @@ class Review(models.Model):
 
 class F_judge(models.Model):
     F_judge = models.ForeignKey()
-    APPName = models.CharField('',)
+    APPName = models.CharField('アプリケーション名', max_length=255)
